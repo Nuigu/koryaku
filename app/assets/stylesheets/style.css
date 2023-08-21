@@ -1,0 +1,111 @@
+body {
+  letter-spacing: 2px;
+  color: #1a1a1c;
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow: scroll;
+}
+
+header {
+  height: 80px;
+  width: 100vw;
+  background-color: #1a1a1c;
+  color: white;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  padding: 0 40px;
+  font-size: 32px;
+  line-height: 80px;
+}
+
+.header-right {
+  padding: 0 40px;
+  display: flex;
+}
+
+.header-menu {
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 80px;
+}
+
+.main {
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 96px;
+}
+
+.new-flowchart {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  padding: 16px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: #f1f1f4;
+}
+
+.new-flowchart-text {
+  position: fixed;
+  right: 60px;
+  bottom: 40px;
+}
+
+.category {
+  text-align: center;
+  padding: 16px;
+}
+
+.list-container {
+  padding: 16px;
+  width: 100%;
+}
+
+.title {
+  width: calc(100% - 64px);
+  height: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #f1f1f4;
+  border-bottom: 1px solid #1a1a1c;
+  border-radius: 8px 8px 0 0;
+  padding: 8px 16px;
+}
+
+.flowchart-content {
+  width: calc(100% - 64px);
+  height: 88px;
+  font-size: 12px;
+  color: #626264;
+  background-color: #f8f8fb;
+  border-radius: 0 0 8px 8px;
+  padding: 8px 16px;
+  margin-bottom: 64px;
+  display: flex;
+}
+
+.flowchart-image {
+  height: 72px;
+  width: 72px;
+  object-fit: contain;
+  border: 3px solid #d8d8db;
+  background-color: white;
+  margin: 4px 0;
+}
+
+.summary-container {
+  padding: 0 16px;
+  line-height: 20px;
+}
+
+.author {
+  display: block;
+  color: #000082;
+  font-weight: 600;
+  text-align: right;
+  text-decoration: none;
+}
