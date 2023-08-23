@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root "flowcharts#index"
-  resources :flowcharts, only: :index
+  devise_for :users
+  resources :flowcharts, only: [:index, :new, :create, :show]
 end

@@ -1,27 +1,21 @@
 <div class="category">カテゴリ:プルダウンリスト</div>
 <div class="list-container">
-  <ul>
-    <li>
-      <div class="title">Ruby on Rails でフリマアプリを作る</div>
-      <div class="flowchart-content">
-        <div class="image-container">
-          <%= image_tag("Railsの処理の流れ.png", class: "flowchart-image") %>
-        </div>
-        <div class="summary-container">
-          Ruby on Rails でフリマアプリを作成します。ユーザー登録機能と商品出品機能、購入機能に加え、決済手段としてクレジットカードを利用可能にする、Pay.jpのAPI導入についても行います。
-          <a class="author" href="#">投稿者の名前</a>
-        </div>
+  <% @flowcharts.each do |f| %>
+    <div class="index-title">
+      <%= link_to f.title, flowchart_path(f.id), class: "link" %>
+    </div>
+    <div class="flowchart-content">
+      <div class="image-container">
+        <%= image_tag(f.image, class: "flowchart-image") %>
       </div>
-      <div class="title">タイトル</div>
-      <div class="flowchart-content">
-        リスト
+      <div class="summary-container">
+        <p class="goal"><%= f.goal %></p>
+        <a class="author link" href="#">by: <%= f.user.name %></a>
       </div>
-      <div class="title">タイトル</div>
-      <div class="flowchart-content">
-        リスト
-      </div>
-    </li>
-  </ul>
+    </div>
+  <% end %>
 </div>
-<%= link_to image_tag("fillable_card_line48.png", class: "new-flowchart"), "#" %>
-<span class="new-flowchart-text">書く</span>
+<%= link_to new_flowchart_path do %>
+  <%= image_tag("fillable_card_line48.png", class: "new-flowchart") %>
+  <span class="new-flowchart-text">書く</span>
+<% end %>

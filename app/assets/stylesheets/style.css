@@ -5,6 +5,8 @@ body {
   overflow: scroll;
 }
 
+/* ヘッダーここから */
+
 header {
   height: 80px;
   width: 100vw;
@@ -33,11 +35,17 @@ header {
   line-height: 80px;
 }
 
+/* ヘッダーここまで */
+/* 共通ここから */
+
 .main {
   width: 700px;
   margin: 0 auto;
-  padding-top: 96px;
+  padding-top: 112px;
 }
+
+/* 共通ここまで */
+/* 一覧画面ここから */
 
 .new-flowchart {
   position: fixed;
@@ -53,6 +61,7 @@ header {
   position: fixed;
   right: 60px;
   bottom: 40px;
+  color: #1a1a1c;
 }
 
 .category {
@@ -61,14 +70,13 @@ header {
 }
 
 .list-container {
-  padding: 16px;
   width: 100%;
 }
 
-.title {
-  width: calc(100% - 64px);
+.index-title {
+  width: calc(100% - 32px);
   height: 24px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
   background-color: #f1f1f4;
   border-bottom: 1px solid #1a1a1c;
@@ -77,9 +85,8 @@ header {
 }
 
 .flowchart-content {
-  width: calc(100% - 64px);
-  height: 88px;
-  font-size: 12px;
+  width: calc(100% - 32px);
+  font-size: 14px;
   color: #626264;
   background-color: #f8f8fb;
   border-radius: 0 0 8px 8px;
@@ -98,14 +105,106 @@ header {
 }
 
 .summary-container {
+  width: 591px;
   padding: 0 16px;
   line-height: 20px;
 }
 
+.link {
+  text-decoration: none;
+  color: #000082;
+}
+
 .author {
   display: block;
-  color: #000082;
   font-weight: 600;
   text-align: right;
+}
+
+/* 一覧画面ここまで */
+/* 新規作成画面ここから */
+
+.header-link {
   text-decoration: none;
+  color: white;
+}
+
+.form {
+  border: 2px solid #d8d8db;
+  border-radius: 8px;
+  line-height: 24px;
+  padding: 4px 8px;
+  display: block;
+}
+
+.form-label {
+  display: block;
+}
+
+.field {
+  margin-bottom: 32px;
+}
+
+.hidden-field {
+  display: none;
+}
+
+.goal {
+  height: 72px;
+  width: 560px;
+}
+
+.btn {
+  border: 2px solid #d8d8db;
+  padding: 8px 16px;
+}
+
+/* 新規作成画面ここから */
+/* 詳細画面ここから */
+
+.show-title {
+  line-height: 72px;
+  font-size: 32px;
+  border-bottom: 2px solid #d8d8db;
+  text-align: center;
+}
+
+.process {
+  line-height: 24px;
+  background-color: #f1f1f4;
+  padding: 16px 16px;
+  margin: 24px 32px 8px 32px;
+}
+
+.arrow-image {
+  display: block;
+  margin: 0 auto;
+}
+
+.process-form {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 100vw;
+  height: 120px;
+  background-color: #d8d8db;
+}
+
+.goal-message {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 4px;
+}
+
+.show-goal {
+  width: calc(100% - 32px);
+  margin: 8px 0 160px 0;
+  padding: 16px;
+  border-top: 2px solid #d8d8db;
+  display: flex;
+  color: #626264;
+}
+
+.goal-symbol {
+  display: block;
 }

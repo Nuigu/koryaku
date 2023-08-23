@@ -1,0 +1,24 @@
+<%= form_with model: @flowchart do |form| %>
+  <div class="field">
+    <%= form.label :title, class: "form-label" %>
+    <%= form.text_field :title, class: "form" %>
+  </div>
+  <div class="field">
+    <%= form.label :image, class: "form-label" %>
+    <%= form.file_field :image %>
+  </div>
+  <div class="field">
+    <%= form.label :goal, class: "form-label" %>
+    <%= form.text_area :goal, class: "form goal" %>
+  </div>
+  <div class="field">
+    <%= form.label :category_id, class: "form-label" %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box form", id:"item-category"}) %>
+  </div>
+  <div class="hidden-field">
+    <%= form.select :private, [["公開しない", true]] %>
+  </div>
+  <div class="field">
+    <%= form.submit "作成する", class: "btn" %>
+  </div>
+<% end %>
