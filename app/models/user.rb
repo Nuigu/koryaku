@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  # Associations
   has_many :flowcharts
+  has_many :tasks, through: :flowcharts
 end
