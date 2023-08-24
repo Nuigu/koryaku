@@ -1,21 +1,26 @@
 <div class="show-title"><%= @flowchart.title %></div>
-<ol>
-  <li class="process">
-    1. タイトル
-  </li>
-  <%= image_tag("arrow_down_line48.png", class: "arrow-image") %>
-  <li class="process">
-    2. タイトル
-  </li>
-  <%= image_tag("arrow_down_line48.png", class: "arrow-image") %>
-  <li class="process">
-    3. タイトル
-  </li>
-  <%= image_tag("arrow_down_line48.png", class: "arrow-image") %>
-</ol>
-<p class="goal-message">GOAL!</p>
-<div class="show-goal">
-  <%= image_tag("public_offering_line72.png") %>
-  <p><%= @flowchart.goal %></p>
-</div>
-<div class="process-form"></div>
+<%= form_with model: [@flowchart, @task] do |form| %>
+  <ol>
+    <% @tasks.each do |task| %>
+      <div class="radio_btn">
+        <%#= form.select :position, [["", position_number], ["ここに追加する", position_number = @tasks.pluck(:position).select{|num| num <= task.position}.last(2).sum / 2]], selected: "", class: "left" %>
+        <%= form.radio_button :position, @tasks.pluck(:position).select{|num| num <= task.position}.last(2).sum / 2 %>
+        <%= form.label :postion, "ココに追加" %>
+      </div>
+      <li class="process">
+        <%= task.title %>
+      </li>
+      <%= image_tag("arrow_down_line48.png", class: "arrow-image") %>
+    <% end %>
+  </ol>
+  <p class="goal-message">GOAL!</p>
+  <div class="show-goal">
+    <%= image_tag("public_offering_line72.png") %>
+    <p><%= @flowchart.goal %></p>
+  </div>
+  <div class="task-form">
+    <span class="left"><%= (@task_count + 1) %>.<%= form.text_field :title, size: "40*1", class: "form" %></span>
+    <span class="center">目安:<%= form.number_field :time, in: 0.5..99, step: 0.5, class: "form form-time" %> h</span>
+    <%= form.submit "新しいタスクを追加する", class: "btn right" %>
+  </div>
+<% end %>

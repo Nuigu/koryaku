@@ -131,10 +131,9 @@ header {
 
 .form {
   border: 2px solid #d8d8db;
-  border-radius: 8px;
+  border-radius: 4px;
   line-height: 24px;
-  padding: 4px 8px;
-  display: block;
+  padding: 8px;
 }
 
 .form-label {
@@ -169,25 +168,25 @@ header {
   text-align: center;
 }
 
+.radio_btn {
+  line-height: 24px;
+  color: #626264;
+  font-size: 14px;
+  margin: 16px 32px 8px 32px;
+  display: flex;
+  justify-content: left;
+}
+
 .process {
   line-height: 24px;
   background-color: #f1f1f4;
   padding: 16px 16px;
-  margin: 24px 32px 8px 32px;
+  margin: 16px 16px 8px 32px;
 }
 
 .arrow-image {
   display: block;
   margin: 0 auto;
-}
-
-.process-form {
-  position: fixed;
-  left: 0px;
-  bottom: 0px;
-  width: 100vw;
-  height: 120px;
-  background-color: #d8d8db;
 }
 
 .goal-message {
@@ -207,4 +206,35 @@ header {
 
 .goal-symbol {
   display: block;
+}
+
+.task-form {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: calc(100vw - 128px);
+  height: 72px;
+  background-color: #f1f1f4;
+  padding: 32px 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  line-height: 32px;
+}
+
+.left {
+  display: block;
+}
+
+.center {
+  display: block;
+}
+
+.right {
+  display: block;
+}
+
+.form-time {
+  width: 48px;
 }

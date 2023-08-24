@@ -20,6 +20,9 @@ class FlowchartsController < ApplicationController
 
   def show
     @flowchart = Flowchart.find(params[:id])
+    @tasks = @flowchart.tasks.all.order(position: :asc)
+    @task_count = @tasks.count
+    @task = Task.new
   end
 
   private
