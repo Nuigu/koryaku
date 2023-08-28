@@ -1,5 +1,6 @@
 class FlowchartsController < ApplicationController
-  before_action :require_login, only: [:new, :create]
+  before_action :require_login, only: [:new, :create, :edit, :update]
+  before_action :set_flowchart, only: [:edit, :update] 
 
   def index
     @flowcharts = Flowchart.includes(:user).order(created_at: :desc)
@@ -25,12 +26,27 @@ class FlowchartsController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+  end
+
+  def update
+    if @flowchart.update(flowchart_params)
+      redirect_to flowchart_path(params[:id])
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def require_login
     unless user_signed_in?
       redirect_to new_user_session_path
     end
+  end
+
+  def set_flowchart
+    @flowchart = Flowchart.find(params[:id])
   end
 
   def flowchart_params

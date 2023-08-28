@@ -1,4 +1,4 @@
-<div class="category">カテゴリ:プルダウンリスト</div>
+<div class="category">カテゴリ:すべて</div>
 <div class="list-container">
   <% @flowcharts.each do |f| %>
     <div class="index-title">
@@ -6,7 +6,11 @@
     </div>
     <div class="flowchart-content">
       <div class="image-container">
+      <% if f.image.attached? %>
         <%= image_tag(f.image, class: "flowchart-image") %>
+      <% else %>
+        <%= image_tag("public_offering_line72.png") %>
+      <% end %>
       </div>
       <div class="summary-container">
         <p class="goal"><%= f.goal %></p>

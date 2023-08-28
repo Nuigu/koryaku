@@ -1,7 +1,7 @@
 <%= form_with model: @flowchart do |form| %>
   <div class="field">
     <%= form.label :title, class: "form-label" %>
-    <%= form.text_field :title, size: "30*1", class: "form" %>
+    <%= form.text_field :title, size: "30*1", class: "form", placeholder: @flowchart.title %>
   </div>
   <div class="field">
     <%= form.label :image, class: "form-label" %>
@@ -9,16 +9,17 @@
   </div>
   <div class="field">
     <%= form.label :goal, class: "form-label" %>
-    <%= form.text_area :goal, class: "form goal" %>
+    <%= form.text_area :goal, class: "form goal", placeholder: @flowchart.goal %>
   </div>
   <div class="field">
     <%= form.label :category_id, class: "form-label" %>
     <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box form", id:"item-category"}) %>
   </div>
-  <div class="hidden-field">
-    <%= form.select :private, [["公開しない", true]] %>
+  <div class="field">
+    <%= form.check_box :private %>
+    <%= form.label :private, "公開しない" %>
   </div>
   <div class="field">
-    <%= form.submit "作成する", class: "btn" %>
+    <%= form.submit "保存する", class: "btn" %>
   </div>
 <% end %>

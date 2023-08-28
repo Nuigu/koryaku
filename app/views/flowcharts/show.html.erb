@@ -1,9 +1,11 @@
 <div class="show-title"><%= @flowchart.title %></div>
+<div class="show-edit-link">
+  <%= link_to "設定を変更", edit_flowchart_path(@flowchart.id), class: "right link" %>
+</div>
 <%= form_with model: [@flowchart, @task] do |form| %>
   <ol>
     <% @tasks.each do |task| %>
       <div class="radio_btn">
-        <%#= form.select :position, [["", position_number], ["ここに追加する", position_number = @tasks.pluck(:position).select{|num| num <= task.position}.last(2).sum / 2]], selected: "", class: "left" %>
         <%= form.radio_button :position, @tasks.pluck(:position).select{|num| num <= task.position}.last(2).sum / 2 %>
         <%= form.label :postion, "ココに追加" %>
       </div>
@@ -13,7 +15,7 @@
       <%= image_tag("arrow_down_line48.png", class: "arrow-image") %>
     <% end %>
   </ol>
-  <p class="goal-message">GOAL!</p>
+  <p class="goal-message">GOAL</p>
   <div class="show-goal">
     <%= image_tag("public_offering_line72.png") %>
     <p><%= @flowchart.goal %></p>
